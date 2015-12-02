@@ -18,8 +18,11 @@ $content = $_POST['content'];
 $dateline = time();
 
 $insertsql = "insert into article(title,author,description,content,dateline) values ('$title','$author','$description','$content',$dateline)";
-//echo $insertsql;
-if(mysqli_query($con,$insertsql)){
+echo $insertsql;
+$test = mysql_query($insertsql);
+//    mysqli_query($con,$insertsql);
+echo 'xxxxx'.$test.'xxxxx';
+if(mysql_query($insertsql)){
     echo "<script>alert('发布成功');window.location.href='article.add.php'</script>";
 }else{
     echo "<script>alert('发布失败');'</script>";

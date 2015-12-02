@@ -6,12 +6,12 @@
  * Time: 16:07
  */
 require_once('config.php');
-if(!($con = mysqli_connect(HOST,USERNAME,PASSWORD))){
-    echo mysqli_error();
+if(!($con = mysql_connect(HOST,USERNAME,PASSWORD))){
+    echo mysql_error();
 };
-if(!mysqli_select_db($con,'test')){
-    echo mysqli_error();
+if(!mysql_select_db('test')){
+    echo mysql_error();
 };
-if(!mysqli_query($con,'set names utf8')){
-    echo mysqli_error();
+if(!mysql_query('set names utf8')){
+    echo mysql_error();
 };

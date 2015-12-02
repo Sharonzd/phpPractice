@@ -26,7 +26,7 @@ class mysql{  //类是全局的
      */
     function connect($config){
         extract($config);  //提取变量，数组中的每个元素，键用于变量名，键值用于变量值。提取出来后就直接成了变量了，可以直接调用
-        if(!($con = mysqli_connect($dbhost,$dbuser,$dbpsw))){
+        if(!($con = mysql_connect($dbhost,$dbuser,$dbpsw))){
             $this ->err(mysqli_error($con));
         }
         if(!mysqli_select_db($con,$dbname)){
@@ -37,7 +37,7 @@ class mysql{  //类是全局的
 
     function query($con,$sql){
         if(!($query = mysqli_query($con,$sql))){
-            $this
+            $this->err($sql."<br/>".mysqli_error($con));
         }
     }
 }
