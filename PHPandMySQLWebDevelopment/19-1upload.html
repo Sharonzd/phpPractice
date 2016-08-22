@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
+</head>
+<body>
+<!--enctype规定在发送到服务器之前应该如何对表单数据进行编码。multipart/form-data, 服务器就知道上传的文件带有常规的表单信息-->
+<form action="19-2upload.php" method="post" enctype="multipart/form-data">
+    <div>
+        <!--设置上传文件最大长度的表单域, 名称必须为MAX_FILE_SIZE, 单位B。也可以在服务端设置。-->
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+        <label for="userfile">upload a file:</label>
+        <input type="file" name="userfile" id="userfile"><!--指定文件类型-->
+        <input type="submit" value="send file">
+    </div>
+</form>
+</body>
+</html>
