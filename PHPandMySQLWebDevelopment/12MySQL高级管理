@@ -1,0 +1,13 @@
+use mysql;
+show tables;
+
+保存权限信息的6个表:
+user、
+host,
+db,tables_priv,columns_priv, procs_priv
+
+user和host用于确定一个用户是否可以连接MySQL服务器,以及该用户是否具有任何管理员权限。
+db和host确定用户可以访问哪些数据库
+table_priv确定用户可以使用数据库中的哪些表
+columns_priv 确定用户可以访问表中的哪些列
+procs_priv确定用户可以执行哪些进程
